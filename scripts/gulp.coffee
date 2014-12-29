@@ -29,7 +29,7 @@ serverData = require './serverData'
 
 # Default gulp tasks watches files for changes
 gulp.task "default", ['browser-sync'], ->
-  gulp.watch './app/**/*.*', ['templates', 'prodCompile', browserSync.reload]
+  gulp.watch './app/**/*.*', ['templates', 'compile', browserSync.reload]
   gulp.watch "styles/*.less", ["styles", browserSync.reload]
   gulp.watch 'static/**', ['static', browserSync.reload]
   gulp.watch './content/**/*.md', ['content', browserSync.reload]
@@ -37,7 +37,7 @@ gulp.task "default", ['browser-sync'], ->
   return
 
 # For development.
-gulp.task "browser-sync", ['compile', 'templates'], ->
+gulp.task "browser-sync", ['compile', 'templates', 'facebook', 'instagram'], ->
   browserSync
     server:
       baseDir: 'public'
