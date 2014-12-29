@@ -63,7 +63,7 @@ gulp.task 'compile', ['data', 'content', 'static'], (cb) ->
     .pipe gulp.dest('./public/assets')
 
 # Convert yaml files from the content dir to json files.
-gulp.task 'data', ['facebook', 'instagram'], ->
+gulp.task 'data', ->
   gulp.src './content/**/*.yaml'
     .pipe yaml()
     #.pipe gdata serverData
@@ -87,12 +87,12 @@ gulp.task 'templates', (cb) ->
 gulp.task 'styles', ->
   gulp.src(["styles/app.less", 'styles/print.less', 'styles/iefix.less'])
     .pipe less(paths: [path.join(__dirname, "less", "includes")])
-    .pipe gulp.dest("./dev")
+    .pipe gulp.dest("./public")
 
 # Copy static files.
 gulp.task 'static', ->
   gulp.src('./static/**')
-    .pipe gulp.dest('./dev/')
+    .pipe gulp.dest('./public/')
 
 gulp.task 'facebook', ->
   r 'http://social.cape.io/facebook/330679596992065'
