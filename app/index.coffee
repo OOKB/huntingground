@@ -7,10 +7,44 @@ app = React.createClass
   render: ->
     <html>
       <head>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+        <title>{@props.title} | {@props.tagline}</title>
+        <link rel="stylesheet" href="app.css" />
       </head>
       <body>
-        <h1>{@props.title}</h1>
+
+        <div id="wrapper">
+          <h1>{@props.title}</h1>
+
+          <header>
+
+            <figure class="logo">
+              <a href="#" title="{@props.title}" rel="home">
+                <img src="logo.png" alt="Home" />
+              </a>
+            </figure>
+
+            <hgroup>
+              <h2>“{@props.tagline}”</h2>
+            </hgroup>
+
+            <nav  role="navigation">
+              <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Vintage</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Directions</a></li>
+              </ul>
+            </nav>
+
+          </header>
+
+          <main>
+          </main>
+
+          <footer>
+          </footer>
+        </div>
+
         <script src="/assets/app.js" />
       </body>
     </html>
