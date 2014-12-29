@@ -4,7 +4,7 @@
 
 /* Custom Hunting Ground Styles
 ========================================================================================= */
-* { box-sizing: border-box; }
+* { box-sizing: border-box; position: relative; }
 
 .left        {float:left;}
 .right       {float:right;}
@@ -52,11 +52,6 @@ html, body {
   width: 100%;
 }
 
-body {
-  background-origin: content-box;
-  background-attachment: fixed;
-}
-
 #wrapper {
   margin: 48px auto;
   padding-bottom: 48px;
@@ -75,16 +70,9 @@ footer {
   text-align: center;
 }
 
-div.page {
-  margin: 12px 0 0 0;
-  padding-bottom: 0;
-}
-
-div.page div {position: relative;}
-
 /* type in use */
 body {
-  font-family: 'GrotesqueMTStd', Helvetica, Arial, Sans-serif;
+  .grotesque-stack;
   font-weight: 400;
   /**/
   -webkit-hyphens: auto;
@@ -100,10 +88,6 @@ a {
   text-decoration: none;
   /**/
   transition: color 500ms;
-  -moz-transition: color 500ms; /* Firefox 4 */
-  -webkit-transition: color 500ms; /* Safari and Chrome */
-  -o-transition: color 500ms; /* Opera */
-  -ms-transition: color 500ms; /* IE */
 }
 
 a:hover {
@@ -117,7 +101,7 @@ li a.active {
 }
 
 header hgroup h2 {
-  font-family: 'LHFColonialRomanRegular', Georgia, Times, "Times new roman", serif;
+  .colonial-stack;
   font-size: 16px;
   margin: 27px 0;
   text-transform: uppercase;
@@ -130,7 +114,7 @@ header .header nav > ul li {
   text-transform: uppercase;
 }
 
-.field-name-body p {
+p {
   font-size: 16px;
   line-height: 20px;
   margin-bottom: 6px;
@@ -138,30 +122,30 @@ header .header nav > ul li {
 
 /* Logo, Catch Phrase, Etc.
 ========================================================================================= */
-figure.logo img {
+header figure img {
   width: 468px;
 }
 
 /* Main Site Navigation (in header)
 ========================================================================================= */
-header .header nav {
+header nav {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   margin: 6px 0 0 0;
   padding: 6px 0;
 }
 
-header .header nav > ul {
+header nav > ul {
   text-align: center;
 }
 
-header .header nav > ul li {
+header nav > ul li {
   display: inline-block;
   margin: 0 12px;
   text-align: center;
 }
 
-header .header nav h2.title {
+header nav h2.title {
   display: none;
 }
 
@@ -241,17 +225,7 @@ header .header nav h2.title {
 
 /* About Page
 ========================================================================================= */
-.page-node-7 .page .field-name-body {
-  margin: 0 -12px;
-}
-
-.page-node-7 .page .field-name-body p {
-  width: 304px;
-  float: left;
-  margin: 0px 12px;
-}
-
-.page-node-7 .page .field-name-body p:first-child {
+#about p {
   font-size: 24px;
   line-height: 26px;
   margin-bottom: 24px;
@@ -261,20 +235,12 @@ header .header nav h2.title {
   text-align: center;
 }
 
-.page-node-7 .page .field-name-body p:nth-child(3) {
-  margin-top: 20px;
-}
-
-.page-node-7 .page .field-name-body p:nth-child(4) {
-  margin-top: 40px;
-}
-
 /* Contact Page
 ========================================================================================= */
 
 .page-contact div.page {
   padding: 24px 0;
-  }
+}
 
 .page-contact form.contact-form {
   float: left;
@@ -343,11 +309,6 @@ form.contact-form div:nth-child(5) label { width: 180px; padding-top: 0; }
 
 /* Footer Blocks
 ========================================================================================= */
-footer div.socialmedia {
-  position: relative;
-  top:-32px;
-}
-
 footer div.socialmedia ul#sociallinks {
   list-style: none;
   margin: 0;
@@ -368,10 +329,11 @@ footer div.socialmedia ul#sociallinks li a {
   margin: 0;
   padding:0;
   overflow: hidden;
-  text-indent: -999999px;
   height: 30px;
   width: 30px;
 }
+
+/** need to update this: */
 
 ul#sociallinks li.fb a {
   background: url(https://raw.github.com/OOKB/HuntingGroundTheme/master/reference_img/fb_logo_30px.png) center center no-repeat;
@@ -379,30 +341,6 @@ ul#sociallinks li.fb a {
 
 ul#sociallinks li.insta a {
   background: url(https://raw.github.com/OOKB/HuntingGroundTheme/master/reference_img/insta_logo_30px.png) center center no-repeat;
-}
-
-
-/* Brands Page
-========================================================================================= */
-div.logo {
-  float: left;
-  margin: 0 24px 0 0;
-  text-align: center;
-  width: 140px;
-  height: 140px;
-}
-
-div.logo:last-child {
-  margin: 0;
-}
-
-/* DISPLAY NONE HACKS
-========================================================================================= */
-.page h1,
-.page-node-7 h1,
-.page-contact h1,
-header nav.block-menu h2 {
-  display:none;
 }
 
 /* -----------------------------------------------------*/
