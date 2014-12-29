@@ -6,10 +6,12 @@ data = require './data/data'
 app = React.createClass
   render: ->
     <html>
+
       <head>
         <title>{@props.title} | {@props.tagline}</title>
         <link rel="stylesheet" href="app.css" />
       </head>
+
       <body>
 
         <div id="wrapper">
@@ -105,7 +107,7 @@ app = React.createClass
           </footer>
         </div>
 
-        <script src="/assets/app.js" />
+        <script src="/assets/app.js"></script>
       </body>
     </html>
 
