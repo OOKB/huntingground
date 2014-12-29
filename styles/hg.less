@@ -1,0 +1,420 @@
+/*
+  Custom Hunting Ground Styles
+========================================================================================= */
+
+.left        {float:left;}
+.right       {float:right;}
+.clear       {display:block;clear:both;}
+.clearLeft   {display:block;clear:left;}
+.clearRight  {display:block;clear:right;}
+
+.clearfix:before,
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; /* IE < 8 */ }
+
+/* columnar stuff */
+/* columns */
+.column, .columns     { margin:0 24px 24px 0; }
+.columns              { float: left; }
+
+.one                  { width:  58px; }
+.two                  { width: 140px; }
+.three                { width: 222px; }
+.four                 { width: 304px; }
+.five                 { width: 386px; }
+.six, .halfwidth      { width: 468px; }
+.seven                { width: 550px; }
+.eight                { width: 632px; }
+.nine                 { width: 714px; }
+.ten                  { width: 796px; }
+.eleven               { width: 878px; }
+.twelve, .fullwidth   { width: 960px; }
+
+.column.fullwidth,
+.columns.fullwidth,
+.column.last,
+.columns.last         {margin: 0;}
+
+
+/* ====================================================================================== */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  background-origin: content-box;
+  background-attachment: fixed;
+}
+
+#wrapper {
+  margin: 48px auto;
+  padding-bottom: 48px;
+  width: 960px;
+}
+
+header {
+  text-align: center;
+}
+
+footer {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  margin: 24px 0;
+  padding: 18px 0;
+  text-align: center;
+}
+
+div.page {
+  margin: 12px 0 0 0;
+  padding-bottom: 0;
+}
+
+div.page div {position: relative;}
+
+/* type in use */
+body {
+  font-family: 'GrotesqueMTStd', Helvetica, Arial, Sans-serif;
+  font-weight: 400;
+  /**/
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+  /**/
+  text-rendering: optimizeLegibility;
+}
+
+/* Links */
+a {
+  color:black;
+  text-decoration: none;
+  /**/
+  transition: color 500ms;
+  -moz-transition: color 500ms; /* Firefox 4 */
+  -webkit-transition: color 500ms; /* Safari and Chrome */
+  -o-transition: color 500ms; /* Opera */
+  -ms-transition: color 500ms; /* IE */
+}
+
+a:hover {
+  color: #666;
+  text-decoration: none;
+}
+
+li a.active {
+  color: #999;
+  font-weight: normal;
+}
+
+header hgroup h2 {
+  font-family: 'LHFColonialRomanRegular', Georgia, Times, "Times new roman", serif;
+  font-size: 16px;
+  margin: 27px 0;
+  text-transform: uppercase;
+}
+
+header .header nav > ul li {
+  font-family: 'GrotesqueMTStdExtraCondRg';
+  font-size: 24px;
+  font-weight: normal !important;
+  text-transform: uppercase;
+}
+
+/*
+.field-name-body {
+	-moz-column-count: 2;
+	-moz-column-gap: 24px;
+	-webkit-column-count: 2;
+	-webkit-column-gap: 24px;
+	column-count: 2;
+	column-gap: 24px;
+}
+*/
+
+.field-name-body p {
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 6px;
+}
+
+/* Links */
+
+
+/* Logo, Catch Phrase, Etc.
+========================================================================================= */
+figure.logo img {
+  width: 468px;
+}
+
+/* Main Site Navigation (in header)
+========================================================================================= */
+header .header nav {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  margin: 6px 0 0 0;
+  padding: 6px 0;
+}
+
+header .header nav > ul {
+  text-align: center;
+}
+
+header .header nav > ul li {
+  display: inline-block;
+  margin: 0 12px;
+  text-align: center;
+}
+
+header .header nav h2.title {
+  display: none;
+}
+
+
+/* Homepage Slideshow
+========================================================================================= */
+
+.view-homepage-images {
+  height: 480px !important;
+}
+
+.ssnav {
+  background: #333;
+  display: block;
+  height: 240px;
+  overflow: hidden;
+  padding-top: 240px;
+  position: absolute !important;
+  text-indent: -999999px;
+  top:0;
+  width: 160px;
+  z-index: 9;
+  /**/
+  opacity: 0;
+  transition: opacity 500ms;
+  -moz-transition: opacity 500ms; /* Firefox 4 */
+  -webkit-transition: opacity 500ms; /* Safari and Chrome */
+  -o-transition: opacity 500ms; /* Opera */
+  -ms-transition: opacity 500ms; /* IE */
+}
+
+.ssnav:hover {
+  background: #333;
+  opacity: .55;
+}
+
+#prev {
+  background: #333 url(i/arrow-l.png) center center no-repeat;
+  left: 0;
+}
+
+#next {
+  background: #333 url(i/arrow-r.png) center center no-repeat;
+  right: 0;
+}
+
+#slidenav {
+  position: relative;
+  text-align: center;
+  top: 9px;
+  z-index: 9;
+  width: 100%;
+}
+
+#slidenav a {
+  background: #eee;
+  display: inline-block;
+  height: 18px;
+  margin: 0 3px;
+  padding: 0;
+  width: 18px;
+  /**/
+  text-indent: -9999999px;
+  overflow: hidden;
+  /**/
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+}
+
+#slidenav a:hover {
+  background: #666;
+}
+
+#slidenav a.activeSlide {
+  background: #999;
+}
+
+/* About Page
+========================================================================================= */
+.page-node-7 .page .field-name-body {
+  margin: 0 -12px;
+}
+
+.page-node-7 .page .field-name-body p {
+  width: 304px;
+  float: left;
+  margin: 0px 12px;
+}
+
+.page-node-7 .page .field-name-body p:first-child {
+  font-size: 24px;
+  line-height: 26px;
+  margin-bottom: 24px;
+  margin-left: 164px;
+  margin-top: 20px;
+  width: 632px;
+  text-align: center;
+}
+
+.page-node-7 .page .field-name-body p:nth-child(3) {
+  margin-top: 20px;
+}
+
+.page-node-7 .page .field-name-body p:nth-child(4) {
+  margin-top: 40px;
+}
+
+/* Contact Page
+========================================================================================= */
+
+.page-contact div.page {
+  padding: 24px 0;
+  }
+
+.page-contact form.contact-form {
+  float: left;
+  margin-right: 24px;
+  width: 386px;
+}
+
+form.contact-form label { display: block; float: left; width: 160px; margin-right:24px; padding-top: 4px;font-size: 95%; }
+form.contact-form input#edit-name,
+form.contact-form input#edit-mail,
+form.contact-form input#edit-subject { width: 196px; }
+
+form.contact-form div {
+  border-top: 1px solid #ccc;
+  margin-top: 12px;
+  padding-top: 12px
+}
+
+form.contact-form div:first-child { margin-top: 0; }
+
+form.contact-form div.form-textarea-wrapper,
+form.contact-form div.grippie {
+  clear: left;
+  border-top: none;
+  margin-top: 0;
+  padding-top: 0
+}
+
+form.contact-form div.form-actions input { width: 99px; }
+
+form.contact-form div:nth-child(4) label { float: none; padding-bottom: 6px; }
+form.contact-form div:nth-child(5) label { width: 180px; padding-top: 0; }
+
+.page-contact div.page div.map {
+  margin-left: 410px;
+}
+
+.page-contact div.page div.directions {
+  margin-top: 40px;
+}
+
+.page-contact div.page div.directions h2 {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.page-contact div.page div.directions p {
+  float: left;
+  margin: 0 24px 0 0;
+  padding: 0;
+  width: 468px;
+}
+
+.page-contact div.page div.directions p:last-child {
+  margin-right: 0 !important;
+}
+
+.page-contact .hours {
+  position: absolute;
+  top:  380px;
+}
+
+.page-contact .hours p {
+  margin-bottom: 10px;
+}
+
+/* Footer Blocks
+========================================================================================= */
+footer div.socialmedia {
+  position: relative;
+  top:-32px;
+}
+
+footer div.socialmedia ul#sociallinks {
+  list-style: none;
+  margin: 0;
+  padding:0;
+}
+
+footer div.socialmedia ul#sociallinks li {
+  display: inline-block;
+  list-style: none;
+  margin: 0 0 0 9px;
+  padding:0;
+  height: 30px;
+  width: 30px;
+}
+
+footer div.socialmedia ul#sociallinks li a {
+  display: block;
+  margin: 0;
+  padding:0;
+  overflow: hidden;
+  text-indent: -999999px;
+  height: 30px;
+  width: 30px;
+}
+
+ul#sociallinks li.fb a {
+  background: url(https://raw.github.com/OOKB/HuntingGroundTheme/master/reference_img/fb_logo_30px.png) center center no-repeat;
+}
+
+ul#sociallinks li.insta a {
+  background: url(https://raw.github.com/OOKB/HuntingGroundTheme/master/reference_img/insta_logo_30px.png) center center no-repeat;
+}
+
+
+/* Brands Page
+========================================================================================= */
+div.logo {
+  float: left;
+  margin: 0 24px 0 0;
+  text-align: center;
+  width: 140px;
+  height: 140px;
+}
+
+div.logo:last-child {
+  margin: 0;
+}
+
+/* DISPLAY NONE HACKS
+========================================================================================= */
+.page h1,
+.page-node-7 h1,
+.page-contact h1,
+header nav.block-menu h2 {
+  display:none;
+}
