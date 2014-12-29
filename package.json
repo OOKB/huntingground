@@ -25,7 +25,8 @@
     "node-cjsx": "^0.1.2",
     "react": "^0.12.1",
     "reactable": "^0.9.3",
-    "queries": "0.0.2"
+    "queries": "0.0.2",
+    "coffee-react": "^2.1.2"
   },
   "devDependencies": {
     "browserify": "^8.0.2",
