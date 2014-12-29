@@ -3,7 +3,7 @@
 exec = require('child_process').exec
 
 gulp = require 'gulp'
-#r = require 'request'
+r = require 'request'
 
 browserSync = require 'browser-sync'
 
@@ -12,7 +12,7 @@ exorcist = require 'exorcist'
 #coffeeify = require 'coffeeify'
 #bd = require 'browserify-data'
 
-#source = require('vinyl-source-stream')
+source = require('vinyl-source-stream')
 transform = require 'vinyl-transform'
 
 #less = require 'gulp-less'
@@ -20,9 +20,12 @@ transform = require 'vinyl-transform'
 #zopfli = require 'gulp-zopfli'
 rename = require 'gulp-rename'
 uglify = require 'gulp-uglify'
+gdata = require 'gulp-data'
 #runSequence = require 'run-sequence'
-#markdown = require 'gulp-markdown-to-json'
-#yaml = require 'gulp-yaml'
+markdown = require 'gulp-markdown-to-json'
+yaml = require 'gulp-yaml'
+
+serverData = require './serverData'
 
 # Default gulp tasks watches files for changes
 gulp.task "default", ['browser-sync'], ->
@@ -60,9 +63,10 @@ gulp.task 'compile', ['data', 'content', 'static'], (cb) ->
     .pipe gulp.dest('./public/assets')
 
 # Convert yaml files from the content dir to json files.
-gulp.task 'data', ->
+gulp.task 'data', ['facebook', 'instagram'], ->
   gulp.src './content/**/*.yaml'
     .pipe yaml()
+    #.pipe gdata serverData
     .pipe gulp.dest('./app/data/')
 
 # Convert markdown files from content dir to json files.
@@ -89,6 +93,16 @@ gulp.task 'styles', ->
 gulp.task 'static', ->
   gulp.src('./static/**')
     .pipe gulp.dest('./dev/')
+
+gulp.task 'facebook', ->
+  r 'http://social.cape.io/facebook/330679596992065'
+    .pipe source('facebook.json')
+    .pipe gulp.dest('./app/data/')
+
+gulp.task 'instagram', ->
+  r 'http://social.cape.io/instagram/29592386'
+    .pipe source('instagram.json')
+    .pipe gulp.dest('./app/data/')
 
 # Watchify the main app file.
 # gulp.task 'compile', ->
