@@ -1,6 +1,10 @@
-/*
-  Custom Hunting Ground Styles
+/* -----------------------------------------------------*/
+/* ------------------->>> hg.less <<<-------------------*/
+/* -----------------------------------------------------*/
+
+/* Custom Hunting Ground Styles
 ========================================================================================= */
+* { box-sizing: border-box; }
 
 .left        {float:left;}
 .right       {float:right;}
@@ -8,39 +12,36 @@
 .clearLeft   {display:block;clear:left;}
 .clearRight  {display:block;clear:right;}
 
-.clearfix:before,
-.clearfix:after {
-  content: ".";
-  display: block;
-  height: 0;
-  overflow: hidden;
+/* super simple CF from the very end of here: http://css-tricks.com/snippets/css/clear-fix/ */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
 }
-.clearfix:after { clear: both; }
-.clearfix { zoom: 1; /* IE < 8 */ }
 
 /* columnar stuff */
-/* columns */
-.column, .columns     { margin:0 24px 24px 0; }
-.columns              { float: left; }
+.columns {
+  float: left;
+  margin: 0;
+  padding: 0 12px;
+}
 
-.one                  { width:  58px; }
-.two                  { width: 140px; }
-.three                { width: 222px; }
-.four                 { width: 304px; }
-.five                 { width: 386px; }
-.six, .halfwidth      { width: 468px; }
-.seven                { width: 550px; }
-.eight                { width: 632px; }
-.nine                 { width: 714px; }
-.ten                  { width: 796px; }
-.eleven               { width: 878px; }
-.twelve, .fullwidth   { width: 960px; }
+.group {
+  margin: 0 -12px 24px -12px;
+}
 
-.column.fullwidth,
-.columns.fullwidth,
-.column.last,
-.columns.last         {margin: 0;}
-
+.one                   { width: calc(100% / 12 * 01); }
+.two                   { width: calc(100% / 12 * 02); }
+.three                 { width: calc(100% / 12 * 03); }
+.four                  { width: calc(100% / 12 * 04); }
+.five                  { width: calc(100% / 12 * 05); }
+.six, .halfwidth       { width: calc(100% / 12 * 06); }
+.seven                 { width: calc(100% / 12 * 07); }
+.eight                 { width: calc(100% / 12 * 08); }
+.nine                  { width: calc(100% / 12 * 09); }
+.ten                   { width: calc(100% / 12 * 10); }
+.eleven                { width: calc(100% / 12 * 11); }
+.twelve, .fullwidth    { width: calc(100% / 12 * 12); }
 
 /* ====================================================================================== */
 
@@ -129,25 +130,11 @@ header .header nav > ul li {
   text-transform: uppercase;
 }
 
-/*
-.field-name-body {
-	-moz-column-count: 2;
-	-moz-column-gap: 24px;
-	-webkit-column-count: 2;
-	-webkit-column-gap: 24px;
-	column-count: 2;
-	column-gap: 24px;
-}
-*/
-
 .field-name-body p {
   font-size: 16px;
   line-height: 20px;
   margin-bottom: 6px;
 }
-
-/* Links */
-
 
 /* Logo, Catch Phrase, Etc.
 ========================================================================================= */
@@ -177,7 +164,6 @@ header .header nav > ul li {
 header .header nav h2.title {
   display: none;
 }
-
 
 /* Homepage Slideshow
 ========================================================================================= */
@@ -418,3 +404,8 @@ div.logo:last-child {
 header nav.block-menu h2 {
   display:none;
 }
+
+/* -----------------------------------------------------*/
+/* ---------------->>> /END hg.less <<<-----------------*/
+/* -----------------------------------------------------*/
+
