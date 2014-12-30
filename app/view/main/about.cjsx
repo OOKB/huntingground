@@ -6,5 +6,7 @@ module.exports = React.createClass
     {mission} = @props.data
 
     <section id="about">
-      <p>{mission}</p>
+      <div className="group">
+        <p className="eight columns offset-two">{mission}</p>
+      </div>
     </section>
