@@ -1,34 +1,62 @@
 r = require 'request'
 _ = require 'queries'
 async = require 'async'
+fs = require 'fs-extra'
+imgix = require './imgix'
 
-module.exports = (file, callback) ->
-  data = JSON.parse String(file.contents)
-  fb = (cb) ->
-    if _.isString data.facebook
-      r 'http://social.cape.io/facebook/'+data.facebook, (err, resp, body) ->
-        if err then throw err
-        data.facebook = JSON.parse body
-        console.log 'fb done'
-        cb()
-    else
-      cb()
+data = require '../app/data/data'
 
-  insta = (cb) ->
-    if _.isString data.instagram
-      r 'http://social.cape.io/instagram/'+data.instagram, (err, resp, body) ->
-        if err then throw err
-        data.instagram = JSON.parse body
-        console.log 'insta done'
-        cb()
-    else
-      cb()
+module.exports = (callback) ->
 
-  save = ->
-    file.contents = new Buffer JSON.stringify(data)
-    console.log data
-    callback()
+  getData =
+    fb: (cb) ->
+      if data.facebook
+        r 'http://social.cape.io/facebook/'+data.facebook, (err, resp, body) ->
+          console.log 'fb done'
+          cb err, JSON.parse(body)
+      else
+        cb(null, false)
 
-  async.parallel [fb, insta], save
+    insta: (cb) ->
+      if data.instagram
+        r 'http://social.cape.io/instagram/'+data.instagram, (err, resp, body) ->
+          console.log 'insta done'
+          cb err, JSON.parse(body)
+      else
+        cb(null, false)
 
-  console.log 'run'
+  save = (err, serverData) ->
+    console.log 'save'
+    {fb, insta} = serverData
+
+    data.title = fb.name
+    data.address = "#{fb.location.street}, #{fb.location.city}, #{fb.location.state}. #{fb.location.zip}"
+    data.phone = fb.phone
+    data.coverImg = _.rename fb.cover.images[0], {source: 'url'}
+
+    # Extract the fields we want from the data feed.
+    data.instagram = _.map insta, (pic) ->
+      imgData = pic.images.standard_resolution
+      imgData.id = pic.id
+      imgData.caption = pic.caption.text
+      imgData
+    # Slice the array down to 6 items. Item 0 through item 5.
+    data.instagram = data.instagram[0..5]
+
+    # IMGIX
+    key = process.env.IMGIX_CAPE
+    domain = 'cape.imgix.net'
+    ops =
+      h: 480
+      w: Math.min(data.coverImg.width, 900)
+      fit: 'crop'
+
+    console.log key, domain
+
+    data.coverImg.url = imgix domain, key, data.coverImg.url, ops
+
+    fs.outputJsonSync 'app/data/index.json', data
+    if _.isFunction callback
+      callback()
+
+  async.parallel getData, save

@@ -29,7 +29,7 @@ yaml = require 'gulp-yaml'
 serverData = require './serverData'
 
 # Default gulp tasks watches files for changes
-gulp.task "default", ['browser-sync'], ->
+gulp.task "default", ['serverData', 'browser-sync'], ->
   gulp.watch './app/**/*.*', ['templates', browserSync.reload]
   gulp.watch "styles/*.less", ["styles", browserSync.reload]
   gulp.watch 'static/**', ['static', browserSync.reload]
@@ -38,7 +38,7 @@ gulp.task "default", ['browser-sync'], ->
   return
 
 # For development.
-gulp.task "browser-sync", ['templates', 'facebook', 'instagram'], ->
+gulp.task "browser-sync", ['templates'], ->
   browserSync
     server:
       baseDir: 'public'
@@ -70,7 +70,6 @@ gulp.task 'compile', ->
 gulp.task 'data', ->
   gulp.src './content/**/*.yaml'
     .pipe yaml()
-    #.pipe gdata serverData
     .pipe gulp.dest('./app/data/')
 
 # Convert markdown files from content dir to json files.
@@ -78,6 +77,9 @@ gulp.task 'content', ->
   gulp.src './content/**/*.md'
     .pipe markdown()
     .pipe gulp.dest('./app/data/')
+
+gulp.task 'serverData', ['data'], (cb) ->
+  serverData cb
 
 # Compile the static html files.
 gulp.task 'templates', ['compile'], (cb) ->
