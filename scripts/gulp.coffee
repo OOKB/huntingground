@@ -39,7 +39,7 @@ gulp.task "default", ['serverData', 'browser-sync'], ->
   return
 
 # For development.
-gulp.task "browser-sync", ['templates'], ->
+gulp.task "browser-sync", ['templates', 'styles', 'static'], ->
   browserSync
     server:
       baseDir: 'public'
@@ -130,7 +130,7 @@ gulp.task 'instagram', ->
 
 # - - - - prod - - - -
 
-gulp.task 'prod', ->
+gulp.task 'prod', ['static', 'sererData', 'templates'], ->
   runSequence ['prod_clean', 'set_sha', 'serverData', 'data', 'content'],
     ['templatesProd', 'prod_static', 'copy_css', 'prod_compile'],
     'compress',
