@@ -130,14 +130,7 @@ gulp.task 'instagram', ->
 
 # - - - - prod - - - -
 
-gulp.task 'prod', ['static', 'sererData', 'templates'], ->
-  runSequence ['prod_clean', 'set_sha', 'serverData', 'data', 'content'],
-    ['templatesProd', 'prod_static', 'copy_css', 'prod_compile'],
-    'compress',
-    cb
-  return
-
-gulp.task 'deploy', ->
+gulp.task 'deploy', ['static', 'serverData', 'templates', 'styles'], ->
   gulp.src './public/**/*'
     .pipe deploy()
 
