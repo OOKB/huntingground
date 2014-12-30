@@ -3,7 +3,7 @@ React = require 'react'
 module.exports = React.createClass
   render: ->
 
-    {about, how} = @props.data
+    {about, how, trends} = @props.data
 
     <section id="vintage">
       <h3>Vintage</h3>
@@ -12,7 +12,11 @@ module.exports = React.createClass
           {about}
         </p>
         <p className="four columns">
+          <em>How It Works:</em>
           {how}
+        </p>
+        <p className="four columns">
+          {trends}
         </p>
       </div>
     </section>
