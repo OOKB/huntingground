@@ -13,7 +13,8 @@
 .clearRight  {display:block;clear:right;}
 
 /* super simple CF from the very end of here: http://css-tricks.com/snippets/css/clear-fix/ */
-.clearfix::after {
+.clearfix::after,
+.group::after {
   content: "";
   display: table;
   clear: both;
@@ -70,6 +71,10 @@ footer {
   text-align: center;
 }
 
+section {
+  padding-top: 48px;
+}
+
 /* type in use */
 body {
   .grotesque-stack;
@@ -119,6 +124,15 @@ p {
   font-size: 16px;
   line-height: 20px;
   margin-bottom: 6px;
+}
+
+h3 {
+  margin-bottom: 1em;
+}
+
+#vintage p em {
+  display: block;
+  margin-top: -20px;
 }
 
 /* Logo, Catch Phrase, Etc.
