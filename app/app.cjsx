@@ -6,7 +6,7 @@ fb = require './data/facebook'
 instagram = require './data/instagram'
 
 data.title = fb.name
-data.address = fb.location.street
+data.address = "#{fb.location.street}, #{fb.location.city}, #{fb.location.state}. #{fb.location.zip}"
 data.phone = fb.phone
 data.coverImg = _.rename fb.cover.images[0], {source: 'url'}
 # Extract the fields we want from the data feed.
