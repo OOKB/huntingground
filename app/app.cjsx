@@ -8,6 +8,7 @@ instagram = require './data/instagram'
 data.title = fb.name
 data.address = fb.location.street
 data.phone = fb.phone
+data.coverImg = _.rename fb.cover.images[0], {source: 'url'}
 # Extract the fields we want from the data feed.
 data.instagram = _.map instagram, (pic) ->
   imgData = pic.images.standard_resolution

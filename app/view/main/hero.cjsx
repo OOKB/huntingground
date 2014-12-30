@@ -2,6 +2,8 @@ React = require 'react'
 
 module.exports = React.createClass
   render: ->
+    {coverImg} = @props.data
+
     <section className="hero">
-      <img src="http://www.shophuntingground.com/sites/shophuntingground.com/files/styles/homepage_images/public/field/image/combo3.jpg%3Fitok=apLGIkP" />
+      <img src={coverImg.url} width={coverImg.width} height={coverImg.height} />
     </section>
