@@ -132,7 +132,7 @@ gulp.task 'instagram', ->
 
 gulp.task 'deploy', ['static', 'serverData', 'templates', 'styles'], ->
   gulp.src './public/**/*'
-    .pipe deploy()
+    .pipe deploy cacheDir: './tmp'
 
 # gulp.task 'templatesProd', ->
 #   exec('coffee gulp/compileProd.coffee')
