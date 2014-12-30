@@ -12,7 +12,7 @@ module.exports = React.createClass
     <html>
       <head>
         <title>{pgTitle}</title>
-        <link rel="stylesheet" href="app.css" />
+        <link rel="stylesheet" href="assets/app.css" />
       </head>
       <body>
         <div id="wrapper">

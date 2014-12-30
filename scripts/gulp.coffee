@@ -21,7 +21,7 @@ less = require 'gulp-less'
 rename = require 'gulp-rename'
 uglify = require 'gulp-uglify'
 gdata = require 'gulp-data'
-
+debug = require 'gulp-debug'
 #runSequence = require 'run-sequence'
 markdown = require 'gulp-markdown-to-json'
 yaml = require 'gulp-yaml'
