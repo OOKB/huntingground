@@ -30,7 +30,7 @@ serverData = require './serverData'
 
 # Default gulp tasks watches files for changes
 gulp.task "default", ['browser-sync'], ->
-  gulp.watch './app/**/*.*', ['templates', 'compile', browserSync.reload]
+  gulp.watch './app/**/*.*', ['templates', browserSync.reload]
   gulp.watch "styles/*.less", ["styles", browserSync.reload]
   gulp.watch 'static/**', ['static', browserSync.reload]
   gulp.watch './content/**/*.md', ['content', browserSync.reload]
@@ -38,7 +38,7 @@ gulp.task "default", ['browser-sync'], ->
   return
 
 # For development.
-gulp.task "browser-sync", ['compile', 'templates', 'facebook', 'instagram'], ->
+gulp.task "browser-sync", ['templates', 'facebook', 'instagram'], ->
   browserSync
     server:
       baseDir: 'public'
@@ -80,7 +80,7 @@ gulp.task 'content', ->
     .pipe gulp.dest('./app/data/')
 
 # Compile the static html files.
-gulp.task 'templates', (cb) ->
+gulp.task 'templates', ['compile'], (cb) ->
   # Calling an external script for this.
   exec 'coffee ./scripts/renderMarkup.coffee', (err, stdout, stderr) ->
     console.log stdout
