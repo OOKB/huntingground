@@ -15,10 +15,12 @@ module.exports = React.createClass
         <link rel="stylesheet" href="app.css" />
       </head>
       <body>
-        <Head data={@props.data} />
-        <h1>{title}</h1>
-        <Main data={@props.data} />
+        <div id="wrapper">
+          <Head data={@props.data} />
+          <h1>{title}</h1>
+          <Main data={@props.data} />
+          <Foot data={@props.data} />
+        </div>
         <script src="/assets/app.js" />
-        <Foot data={@props.data} />
       </body>
     </html>
