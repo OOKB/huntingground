@@ -2,12 +2,17 @@
   "name": "huntingground",
   "version": "0.0.1",
   "description": "Website files for www.shophuntingground.com",
-  "main": "index.js",
-  "browser": "app/index.coffee",
+  "main": "app/app.cjsx",
+  "browser": "app/app.cjsx",
   "browserify": {
+    "extensions": [
+      ".coffee",
+      ".cjsx",
+      ".json"
+    ],
     "transform": [
       [
-        "cjsxify"
+        "coffee-reactify"
       ]
     ]
   },
@@ -16,7 +21,7 @@
     "dev": "npm run markup && npm run build && browser-sync start --files \"public/index.html, public/assets/*.*\" --server public",
     "markup": "coffee ./scripts/renderMarkup.coffee",
     "update-dev": "npm run markup && npm run build",
-    "build": "NODE_ENV=production browserify ./ -d -p [minifyify --map bundle.map.json --output ./public/assets/bundle.map.json] > ./public/assets/bundle.js && zopfli ./public/assets/bundle.js",
+    "build": "NODE_ENV=production browserify ./ > ./public/assets/app.js && zopfli ./public/assets/app.js",
     "clean": "rm -f ./public/assets/*"
   },
   "author": "Kai Curry <kai@cape.io> (http://www.cape.io/)",
@@ -26,11 +31,12 @@
     "react": "^0.12.1",
     "reactable": "^0.9.3",
     "queries": "0.0.2",
-    "coffee-react": "^2.1.2"
+    "coffee-react": "^2.1.2",
+    "lodash": "^2.4.1",
+    "coffee-reactify": "^2.1.0"
   },
   "devDependencies": {
     "browserify": "^8.0.2",
-    "cjsxify": "^0.2.5",
     "gulp": "^3.8.10",
     "coffee-script": "^1.8.0",
     "vinyl-transform": "^1.0.0",
@@ -42,8 +48,10 @@
     "request": "^2.51.0",
     "gulp-data": "^1.1.1",
     "gulp-yaml": "^0.2.3",
+    "gulp-less": "^2.0.1",
     "gulp-markdown-to-json": "^0.2.1",
     "async": "^0.9.0",
-    "vinyl-source-stream": "^1.0.0"
+    "vinyl-source-stream": "^1.0.0",
+    "fs-extra": "^0.13.0"
   }
 }

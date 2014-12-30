@@ -1,4 +1,4 @@
-#path = require 'path'
+path = require 'path'
 #fs = require 'fs-extra'
 exec = require('child_process').exec
 
@@ -15,12 +15,13 @@ exorcist = require 'exorcist'
 source = require('vinyl-source-stream')
 transform = require 'vinyl-transform'
 
-#less = require 'gulp-less'
+less = require 'gulp-less'
 #clean = require 'gulp-clean'
 #zopfli = require 'gulp-zopfli'
 rename = require 'gulp-rename'
 uglify = require 'gulp-uglify'
 gdata = require 'gulp-data'
+
 #runSequence = require 'run-sequence'
 markdown = require 'gulp-markdown-to-json'
 yaml = require 'gulp-yaml'
@@ -47,12 +48,15 @@ gulp.task "browser-sync", ['compile', 'templates', 'facebook', 'instagram'], ->
   return
 
 # This generate js app file.
-gulp.task 'compile', ['data', 'content', 'static'], (cb) ->
+gulp.task 'compile', ->
   browserified = transform (filename) ->
-    b = browserify {debug: true}
+    b = browserify {debug: true, extensions: ['.cjsx', '.coffee']}
     b.add filename
+    #b.transform 'coffee-reactify'
     b.bundle()
-  gulp.src 'app/index.coffee'
+
+
+  gulp.src 'app/app.cjsx'
     .pipe browserified
     # Extract the map.
     .pipe transform(-> exorcist('./public/assets/app.js.map'))
@@ -86,8 +90,8 @@ gulp.task 'templates', (cb) ->
 # Process LESS to CSS.
 gulp.task 'styles', ->
   gulp.src(["styles/app.less", 'styles/print.less', 'styles/iefix.less'])
-    .pipe less(paths: [path.join(__dirname, "less", "includes")])
-    .pipe gulp.dest("./public")
+    .pipe less()
+    .pipe gulp.dest("./public/assets")
 
 # Copy static files.
 gulp.task 'static', ->
