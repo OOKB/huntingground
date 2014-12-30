@@ -6,8 +6,10 @@ module.exports = React.createClass
 
     pics = for pic, i in instagram
       <li className="four columns" key={pic.id}>
-        <img src={pic.url} width={pic.width} height={pic.height} />
-        <p>{pic.caption}</p>
+        <div>
+          <img src={pic.url} width={pic.width} height={pic.height} />
+          <p>{pic.caption}</p>
+        </div>
       </li>
 
     <section id="instagram">
