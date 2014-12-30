@@ -3,10 +3,15 @@ _ = require 'queries'
 
 data = require './data/data'
 fb = require './data/facebook'
+instagram = require './data/instagram'
+
 data.title = fb.name
 data.address = fb.location.street
-
 data.phone = fb.phone
+data.instagram = _.map instagram, (pic) ->
+  imgData = pic.images.standard_resolution
+  imgData.id = pic.id
+  imgData
 
 Index = require './view/index'
 
