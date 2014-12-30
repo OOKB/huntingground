@@ -1,0 +1,624 @@
+/* ------------------------------------------------------*/
+/* ---------->>> everything gets imported! <<<-----------*/
+/* ------------------------------------------------------*/
+/* ============================ RESET ============================ */
+/* ===== Eric Meyer Reset ===== */
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1.33;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* ===== CUSTOM RESET ===== */
+object {
+  outline: none;
+  display: block;
+  overflow: hidden;
+}
+/* force redraw on IE8, fix outline/scroll bug on Firefox 3.6, remove unnecessary margin (copied from swffit)  */
+textarea {
+  overflow: auto;
+}
+/* fix IE */
+iframe {
+  border: 0;
+}
+/* fix line-height [https://gist.github.com/413930] */
+sup,
+sub {
+  line-height: 0;
+  font-size: .75em;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+/* -----------------------------------------------------*/
+/* --------------->>> variables.less <<<----------------*/
+/* -----------------------------------------------------*/
+.grotesque-stack {
+  font-family: 'GrotesqueMTStd', Helvetica, Arial, Sans-serif;
+}
+.colonial-stack {
+  font-family: 'LHFColonialRomanRegular', Georgia, Times, "Times new roman", serif;
+}
+/* ----------------------------------------------------*/
+/* --------------->>> fontface.less <<<----------------*/
+/* ----------------------------------------------------*/
+/* TYPOGRAPHY
+========================================================================================= */
+/* @font-face declarations */
+@font-face {
+  font-family: 'LHFColonialRomanRegular';
+  src: url('/ff/colonial/lhf-colonial-roman-webfont.eot');
+  src: url('/ff/colonial/lhf-colonial-roman-webfont.eot?#iefix') format('embedded-opentype'), url('/ff/colonial/lhf-colonial-roman-webfont.woff') format('woff'), url('/ff/colonial/lhf-colonial-roman-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GrotesqueMTStdExtraCondRg';
+  src: url('/ff/grotesque/grotesquemtstd_extracond-webfont.eot');
+  src: url('/ff/grotesque/grotesquemtstd_extracond-webfont.eot?#iefix') format('embedded-opentype'), url('/ff/grotesque/grotesquemtstd_extracond-webfont.woff') format('woff'), url('/ff/grotesque/grotesquemtstd_extracond-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GrotesqueMTStd';
+  src: url('/ff/grotesque/grotesquemtstd_bold-webfont.eot');
+  src: url('/ff/grotesque/grotesquemtstd_bold-webfont.eot?#iefix') format('embedded-opentype'), url('/ff/grotesque/grotesquemtstd_bold-webfont.woff') format('woff'), url('/ff/grotesque/grotesquemtstd_bold-webfont.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GrotesqueMTStd';
+  src: url('/ff/grotesque/grotesquemtstd_light-webfont.eot');
+  src: url('/ff/grotesque/grotesquemtstd_light-webfont.eot?#iefix') format('embedded-opentype'), url('/ff/grotesque/grotesquemtstd_light-webfont.woff') format('woff'), url('/ff/grotesque/grotesquemtstd_light-webfont.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GrotesqueMTStd';
+  src: url('/ff/grotesque/grotesquemtstd_lightitalic-webfont.eot');
+  src: url('/ff/grotesque/grotesquemtstd_lightitalic-webfont.eot?#iefix') format('embedded-opentype'), url('/ff/grotesque/grotesquemtstd_lightitalic-webfont.woff') format('woff'), url('/ff/grotesque/grotesquemtstd_lightitalic-webfont.ttf') format('truetype');
+  font-weight: 200;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'GrotesqueMTStd';
+  src: url('/ff/grotesque/grotesquemtstd-webfont.eot');
+  src: url('/ff/grotesque/grotesquemtstd-webfont.eot?#iefix') format('embedded-opentype'), url('/ff/grotesque/grotesquemtstd-webfont.woff') format('woff'), url('/ff/grotesque/grotesquemtstd-webfont.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GrotesqueMTStd';
+  src: url('/ff/grotesque/grotesquemtstd_italic-webfont.eot');
+  src: url('/ff/grotesque/grotesquemtstd_italic-webfont.eot?#iefix') format('embedded-opentype'), url('/ff/grotesque/grotesquemtstd_italic-webfont.woff') format('woff'), url('/ff/grotesque/grotesquemtstd_italic-webfont.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+/* -----------------------------------------------------*/
+/* ------------------->>> hg.less <<<-------------------*/
+/* -----------------------------------------------------*/
+/* Custom Hunting Ground Styles
+========================================================================================= */
+* {
+  box-sizing: border-box;
+  position: relative;
+}
+/* super simple CF from the very end of here: http://css-tricks.com/snippets/css/clear-fix/ */
+.clearfix::after,
+.group::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* columnar stuff */
+#wrapper {
+  margin: 48px auto;
+  padding: 0 12px 48px 12px;
+  width: 100%;
+}
+.column,
+.columns {
+  margin: 0 0 24px 0;
+  padding: 0;
+}
+.group {
+  margin: 0 0 24px 0;
+}
+.one,
+.two,
+.three,
+.four,
+.five,
+.six,
+.halfwidth,
+.seven,
+.eight,
+.nine,
+.ten,
+.eleven,
+.twelve,
+.fullwidth {
+  width: calc(100%);
+}
+@media (min-width: 800px) {
+  .left {
+    float: left;
+  }
+  .right {
+    float: right;
+  }
+  .clear {
+    display: block;
+    clear: both;
+  }
+  .clearLeft {
+    display: block;
+    clear: left;
+  }
+  .clearRight {
+    display: block;
+    clear: right;
+  }
+  #wrapper {
+    margin: 48px auto;
+    padding-bottom: 48px;
+    max-width: 1200px;
+  }
+  /* columnar stuff */
+  .column,
+  .columns {
+    float: left;
+    margin: 0 0 24px 0;
+    padding: 0 12px;
+  }
+  .group {
+    margin: 0 -12px 24px -12px;
+  }
+  .one {
+    width: calc(8.33333333%);
+  }
+  .two {
+    width: calc(16.66666667%);
+  }
+  .three {
+    width: calc(25%);
+  }
+  .four {
+    width: calc(33.33333333%);
+  }
+  .five {
+    width: calc(41.66666667%);
+  }
+  .six,
+  .halfwidth {
+    width: calc(50%);
+  }
+  .seven {
+    width: calc(58.33333333%);
+  }
+  .eight {
+    width: calc(66.66666667%);
+  }
+  .nine {
+    width: calc(75%);
+  }
+  .ten {
+    width: calc(83.33333333%);
+  }
+  .eleven {
+    width: calc(91.66666667%);
+  }
+  .twelve,
+  .fullwidth {
+    width: calc(100%);
+  }
+  .offset-one {
+    margin-left: calc(8.33333333%);
+  }
+  .offset-two {
+    margin-left: calc(16.66666667%);
+  }
+  .offset-three {
+    margin-left: calc(25%);
+  }
+  .offset-four {
+    margin-left: calc(33.33333333%);
+  }
+  .offset-five {
+    margin-left: calc(41.66666667%);
+  }
+  .offset-six {
+    margin-left: calc(50%);
+  }
+  .offset-seven {
+    margin-left: calc(58.33333333%);
+  }
+  .offset-eight {
+    margin-left: calc(66.66666667%);
+  }
+  .offset-nine {
+    margin-left: calc(75%);
+  }
+  .offset-ten {
+    margin-left: calc(83.33333333%);
+  }
+  .offset-eleven {
+    margin-left: calc(91.66666667%);
+  }
+  .offset-twelve {
+    margin-left: calc(100%);
+  }
+}
+/* ====================================================================================== */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+#wrapper > h1 {
+  display: none;
+}
+header {
+  text-align: center;
+}
+footer {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  margin: 24px 0;
+  padding: 18px 0;
+  text-align: center;
+}
+section {
+  padding-top: 48px;
+}
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+/* type in use */
+body {
+  font-family: 'GrotesqueMTStd', Helvetica, Arial, Sans-serif;
+  font-weight: 400;
+  /**/
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+  /**/
+  text-rendering: optimizeLegibility;
+}
+/* Links */
+a {
+  color: black;
+  text-decoration: none;
+  /**/
+  transition: color 500ms;
+}
+a:hover {
+  color: #666;
+  text-decoration: none;
+}
+li a.active {
+  color: #999;
+  font-weight: normal;
+}
+header hgroup h2 {
+  font-family: 'LHFColonialRomanRegular', Georgia, Times, "Times new roman", serif;
+  font-size: 16px;
+  margin: 27px 0;
+  text-transform: uppercase;
+}
+header nav > ul li {
+  font-family: 'GrotesqueMTStdExtraCondRg';
+  font-size: 24px;
+  font-weight: normal !important;
+  text-transform: uppercase;
+}
+h3,
+p {
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 6px;
+}
+h3 {
+  margin-bottom: 1em;
+}
+#vintage p em {
+  display: block;
+  margin-top: -20px;
+}
+/* Logo, Catch Phrase, Etc.
+========================================================================================= */
+header figure img {
+  width: 100%;
+  height: auto;
+}
+@media (min-width: 500px) {
+  header figure img {
+    width: 66%;
+  }
+}
+@media (min-width: 800px) {
+  header figure img {
+    width: 50%;
+  }
+}
+/* Main Site Navigation (in header)
+========================================================================================= */
+header nav {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  margin: 6px 0 0 0;
+  padding: 6px 0;
+}
+header nav > ul {
+  text-align: center;
+}
+header nav > ul li {
+  display: inline-block;
+  margin: 0 12px;
+  text-align: center;
+}
+header nav h2.title {
+  display: none;
+}
+/* About Page
+========================================================================================= */
+#about p {
+  font-size: 1.5em;
+  line-height: 1.25;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  text-align: center;
+}
+/* Contact Page
+========================================================================================= */
+.page-contact div.page {
+  padding: 24px 0;
+}
+.page-contact form.contact-form {
+  float: left;
+  margin-right: 24px;
+  width: 386px;
+}
+form.contact-form label {
+  display: block;
+  float: left;
+  width: 160px;
+  margin-right: 24px;
+  padding-top: 4px;
+  font-size: 95%;
+}
+form.contact-form input#edit-name,
+form.contact-form input#edit-mail,
+form.contact-form input#edit-subject {
+  width: 196px;
+}
+form.contact-form div {
+  border-top: 1px solid #ccc;
+  margin-top: 12px;
+  padding-top: 12px;
+}
+form.contact-form div:first-child {
+  margin-top: 0;
+}
+form.contact-form div.form-textarea-wrapper,
+form.contact-form div.grippie {
+  clear: left;
+  border-top: none;
+  margin-top: 0;
+  padding-top: 0;
+}
+form.contact-form div.form-actions input {
+  width: 99px;
+}
+form.contact-form div:nth-child(4) label {
+  float: none;
+  padding-bottom: 6px;
+}
+form.contact-form div:nth-child(5) label {
+  width: 180px;
+  padding-top: 0;
+}
+.page-contact div.page div.map {
+  margin-left: 410px;
+}
+.page-contact div.page div.directions {
+  margin-top: 40px;
+}
+.page-contact div.page div.directions h2 {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.page-contact div.page div.directions p {
+  float: left;
+  margin: 0 24px 0 0;
+  padding: 0;
+  width: 468px;
+}
+.page-contact div.page div.directions p:last-child {
+  margin-right: 0 !important;
+}
+.page-contact .hours {
+  position: absolute;
+  top: 380px;
+}
+.page-contact .hours p {
+  margin-bottom: 10px;
+}
+/* Footer Blocks
+========================================================================================= */
+footer p {
+  margin-bottom: 0;
+}
+footer div.socialmedia ul#sociallinks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 10;
+}
+footer div.socialmedia ul#sociallinks li {
+  display: inline-block;
+  list-style: none;
+  margin: 0 0 0 9px;
+  padding: 0;
+  height: 30px;
+  width: 30px;
+}
+footer div.socialmedia ul#sociallinks li a {
+  display: block;
+  margin: 0;
+  padding: 0;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 30px;
+  width: 30px;
+  background-size: contain;
+}
+/** need to update this: */
+ul#sociallinks li.fb a {
+  background: url(http://2.bp.blogspot.com/-Aufu3xMI7jI/UAsC4BWsr-I/AAAAAAAAAKU/_zA7Wr3R1gE/s380/facebook-logo-white-on-black-small.png) center center no-repeat;
+}
+ul#sociallinks li.insta a {
+  background: url(https://fbcdn-dragon-a.akamaihd.net/hphotos-ak-xpa1/t39.2365-6/851565_437867182987589_1852345085_n.jpg) center center no-repeat;
+}
+.polaroid {
+  border: 1px solid #ccc;
+  padding: 12px;
+  box-shadow: 0 0 4px #ccc;
+  min-height: 450px;
+}
+.polaroid p {
+  margin-top: .5em;
+  margin-bottom: 0;
+}
