@@ -157,15 +157,6 @@ sup {
 sub {
   bottom: -0.25em;
 }
-/* -----------------------------------------------------*/
-/* --------------->>> variables.less <<<----------------*/
-/* -----------------------------------------------------*/
-.grotesque-stack {
-  font-family: 'GrotesqueMTStd', Helvetica, Arial, Sans-serif;
-}
-.colonial-stack {
-  font-family: 'LHFColonialRomanRegular', Georgia, Times, "Times new roman", serif;
-}
 /* ----------------------------------------------------*/
 /* --------------->>> fontface.less <<<----------------*/
 /* ----------------------------------------------------*/
@@ -174,52 +165,61 @@ sub {
 /* @font-face declarations */
 @font-face {
   font-family: 'LHFColonialRomanRegular';
-  src: url('/ff/colonial/lhf-colonial-roman-webfont.eot');
-  src: url('/ff/colonial/lhf-colonial-roman-webfont.eot?#iefix') format('embedded-opentype'), url('/ff/colonial/lhf-colonial-roman-webfont.woff') format('woff'), url('/ff/colonial/lhf-colonial-roman-webfont.ttf') format('truetype');
+  src: url('ff/colonial/lhf-colonial-roman-webfont.eot');
+  src: url('ff/colonial/lhf-colonial-roman-webfont.eot?#iefix') format('embedded-opentype'), url('ff/colonial/lhf-colonial-roman-webfont.woff') format('woff'), url('ff/colonial/lhf-colonial-roman-webfont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'GrotesqueMTStdExtraCondRg';
-  src: url('/ff/grotesque/grotesquemtstd_extracond-webfont.eot');
-  src: url('/ff/grotesque/grotesquemtstd_extracond-webfont.eot?#iefix') format('embedded-opentype'), url('/ff/grotesque/grotesquemtstd_extracond-webfont.woff') format('woff'), url('/ff/grotesque/grotesquemtstd_extracond-webfont.ttf') format('truetype');
+  src: url('ff/grotesque/grotesquemtstd_extracond-webfont.eot');
+  src: url('ff/grotesque/grotesquemtstd_extracond-webfont.eot?#iefix') format('embedded-opentype'), url('ff/grotesque/grotesquemtstd_extracond-webfont.woff') format('woff'), url('ff/grotesque/grotesquemtstd_extracond-webfont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'GrotesqueMTStd';
-  src: url('/ff/grotesque/grotesquemtstd_bold-webfont.eot');
-  src: url('/ff/grotesque/grotesquemtstd_bold-webfont.eot?#iefix') format('embedded-opentype'), url('/ff/grotesque/grotesquemtstd_bold-webfont.woff') format('woff'), url('/ff/grotesque/grotesquemtstd_bold-webfont.ttf') format('truetype');
+  src: url('ff/grotesque/grotesquemtstd_bold-webfont.eot');
+  src: url('ff/grotesque/grotesquemtstd_bold-webfont.eot?#iefix') format('embedded-opentype'), url('ff/grotesque/grotesquemtstd_bold-webfont.woff') format('woff'), url('ff/grotesque/grotesquemtstd_bold-webfont.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: 'GrotesqueMTStd';
-  src: url('/ff/grotesque/grotesquemtstd_light-webfont.eot');
-  src: url('/ff/grotesque/grotesquemtstd_light-webfont.eot?#iefix') format('embedded-opentype'), url('/ff/grotesque/grotesquemtstd_light-webfont.woff') format('woff'), url('/ff/grotesque/grotesquemtstd_light-webfont.ttf') format('truetype');
+  src: url('ff/grotesque/grotesquemtstd_light-webfont.eot');
+  src: url('ff/grotesque/grotesquemtstd_light-webfont.eot?#iefix') format('embedded-opentype'), url('ff/grotesque/grotesquemtstd_light-webfont.woff') format('woff'), url('ff/grotesque/grotesquemtstd_light-webfont.ttf') format('truetype');
   font-weight: 200;
   font-style: normal;
 }
 @font-face {
   font-family: 'GrotesqueMTStd';
-  src: url('/ff/grotesque/grotesquemtstd_lightitalic-webfont.eot');
-  src: url('/ff/grotesque/grotesquemtstd_lightitalic-webfont.eot?#iefix') format('embedded-opentype'), url('/ff/grotesque/grotesquemtstd_lightitalic-webfont.woff') format('woff'), url('/ff/grotesque/grotesquemtstd_lightitalic-webfont.ttf') format('truetype');
+  src: url('ff/grotesque/grotesquemtstd_lightitalic-webfont.eot');
+  src: url('ff/grotesque/grotesquemtstd_lightitalic-webfont.eot?#iefix') format('embedded-opentype'), url('ff/grotesque/grotesquemtstd_lightitalic-webfont.woff') format('woff'), url('ff/grotesque/grotesquemtstd_lightitalic-webfont.ttf') format('truetype');
   font-weight: 200;
   font-style: italic;
 }
 @font-face {
   font-family: 'GrotesqueMTStd';
-  src: url('/ff/grotesque/grotesquemtstd-webfont.eot');
-  src: url('/ff/grotesque/grotesquemtstd-webfont.eot?#iefix') format('embedded-opentype'), url('/ff/grotesque/grotesquemtstd-webfont.woff') format('woff'), url('/ff/grotesque/grotesquemtstd-webfont.ttf') format('truetype');
+  src: url('ff/grotesque/grotesquemtstd-webfont.eot');
+  src: url('ff/grotesque/grotesquemtstd-webfont.eot?#iefix') format('embedded-opentype'), url('ff/grotesque/grotesquemtstd-webfont.woff') format('woff'), url('ff/grotesque/grotesquemtstd-webfont.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: 'GrotesqueMTStd';
-  src: url('/ff/grotesque/grotesquemtstd_italic-webfont.eot');
-  src: url('/ff/grotesque/grotesquemtstd_italic-webfont.eot?#iefix') format('embedded-opentype'), url('/ff/grotesque/grotesquemtstd_italic-webfont.woff') format('woff'), url('/ff/grotesque/grotesquemtstd_italic-webfont.ttf') format('truetype');
+  src: url('ff/grotesque/grotesquemtstd_italic-webfont.eot');
+  src: url('ff/grotesque/grotesquemtstd_italic-webfont.eot?#iefix') format('embedded-opentype'), url('ff/grotesque/grotesquemtstd_italic-webfont.woff') format('woff'), url('ff/grotesque/grotesquemtstd_italic-webfont.ttf') format('truetype');
   font-weight: 400;
   font-style: italic;
+}
+/* -----------------------------------------------------*/
+/* --------------->>> variables.less <<<----------------*/
+/* -----------------------------------------------------*/
+.grotesque-stack {
+  font-family: 'GrotesqueMTStd', Helvetica, Arial, Sans-serif;
+}
+.colonial-stack {
+  font-family: 'LHFColonialRomanRegular', Georgia, Times, "Times new roman", serif;
 }
 /* -----------------------------------------------------*/
 /* ------------------->>> hg.less <<<-------------------*/
@@ -439,6 +439,8 @@ header hgroup h2 {
   font-size: 16px;
   margin: 27px 0;
   text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400px;
 }
 header nav > ul li {
   font-family: 'GrotesqueMTStdExtraCondRg';
