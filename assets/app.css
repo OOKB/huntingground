@@ -394,11 +394,14 @@ footer {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   margin: 24px 0;
-  padding: 18px 0;
+  padding: 1em 0;
   text-align: center;
 }
 section {
-  padding-top: 48px;
+  padding-top: 24px;
+}
+.border-top {
+  border-top: 1px solid black;
 }
 img {
   width: 100%;
@@ -499,6 +502,27 @@ header nav h2.title {
   margin-bottom: 1em;
   margin-top: 1em;
   text-align: center;
+}
+/* Instagram Stuff
+========================================================================================= */
+.polaroid {
+  border: 1px solid #ccc;
+  padding: 12px;
+  box-shadow: 0 0 4px #ccc;
+}
+.polaroid p {
+  margin-top: .5em;
+  margin-bottom: 0;
+}
+@media (min-width: 800px) {
+  .polaroid {
+    min-height: calc(33vw + 5em);
+  }
+}
+@media (min-width: 1200px) {
+  .polaroid {
+    min-height: 450px;
+  }
 }
 /* Contact Page
 ========================================================================================= */
@@ -605,20 +629,9 @@ footer div.socialmedia ul#sociallinks li a {
   width: 30px;
   background-size: contain;
 }
-/** need to update this: */
 ul#sociallinks li.fb a {
   background: url(http://2.bp.blogspot.com/-Aufu3xMI7jI/UAsC4BWsr-I/AAAAAAAAAKU/_zA7Wr3R1gE/s380/facebook-logo-white-on-black-small.png) center center no-repeat;
 }
 ul#sociallinks li.insta a {
   background: url(https://fbcdn-dragon-a.akamaihd.net/hphotos-ak-xpa1/t39.2365-6/851565_437867182987589_1852345085_n.jpg) center center no-repeat;
-}
-.polaroid {
-  border: 1px solid #ccc;
-  padding: 12px;
-  box-shadow: 0 0 4px #ccc;
-  min-height: 450px;
-}
-.polaroid p {
-  margin-top: .5em;
-  margin-bottom: 0;
 }

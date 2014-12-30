@@ -1,4 +1,0 @@
-huntingground
-=============
-
-shophuntingground.com
