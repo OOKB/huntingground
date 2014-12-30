@@ -1,6 +1,7 @@
 React = require 'react'
 
 Head = require './head/head'
+Main = require './main/main'
 Foot = require './foot/foot'
 
 module.exports = React.createClass
@@ -16,6 +17,7 @@ module.exports = React.createClass
       <body>
         <Head data={@props.data} />
         <h1>{title}</h1>
+        <Main data={@props.data} />
         <script src="/assets/app.js" />
         <Foot data={@props.data} />
       </body>
