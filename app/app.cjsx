@@ -8,10 +8,13 @@ instagram = require './data/instagram'
 data.title = fb.name
 data.address = fb.location.street
 data.phone = fb.phone
+# Extract the fields we want from the data feed.
 data.instagram = _.map instagram, (pic) ->
   imgData = pic.images.standard_resolution
   imgData.id = pic.id
   imgData
+# Slice the array down to 6 items. Item 0 through item 5.
+data.instagram = data.instagram[0..5]
 
 Index = require './view/index'
 
