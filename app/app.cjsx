@@ -2,8 +2,6 @@ React = require 'react'
 _ = require 'queries'
 
 data = require './data'
-fb = require './data/facebook'
-instagram = require './data/instagram'
 
 Index = require './view/index'
 
