@@ -6,12 +6,6 @@
 ========================================================================================= */
 * { box-sizing: border-box; position: relative; }
 
-.left        {float:left;}
-.right       {float:right;}
-.clear       {display:block;clear:both;}
-.clearLeft   {display:block;clear:left;}
-.clearRight  {display:block;clear:right;}
-
 /* super simple CF from the very end of here: http://css-tricks.com/snippets/css/clear-fix/ */
 .clearfix::after,
 .group::after {
@@ -51,6 +45,12 @@
 .twelve, .fullwidth    { width: calc(100% / 12 * 12); }
 
 @media (min-width: 800px) {
+  .left        {float:left;}
+  .right       {float:right;}
+  .clear       {display:block;clear:both;}
+  .clearLeft   {display:block;clear:left;}
+  .clearRight  {display:block;clear:right;}
+
   #wrapper {
     margin: 48px auto;
     padding-bottom: 48px;

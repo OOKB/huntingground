@@ -12,6 +12,7 @@ module.exports = React.createClass
     <html>
       <head>
         <title>{pgTitle}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="assets/app.css" />
       </head>
       <body>
