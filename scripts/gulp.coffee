@@ -22,7 +22,8 @@ rename = require 'gulp-rename'
 uglify = require 'gulp-uglify'
 gdata = require 'gulp-data'
 debug = require 'gulp-debug'
-#runSequence = require 'run-sequence'
+deploy = require 'gulp-gh-pages'
+runSequence = require 'run-sequence'
 markdown = require 'gulp-markdown-to-json'
 yaml = require 'gulp-yaml'
 
@@ -129,12 +130,16 @@ gulp.task 'instagram', ->
 
 # - - - - prod - - - -
 
-gulp.task 'prod', (cb) ->
+gulp.task 'prod', ->
   runSequence ['prod_clean', 'set_sha', 'serverData', 'data', 'content'],
     ['templatesProd', 'prod_static', 'copy_css', 'prod_compile'],
     'compress',
     cb
   return
+
+gulp.task 'deploy', ->
+  gulp.src './public/**/*'
+    .pipe deploy()
 
 # gulp.task 'templatesProd', ->
 #   exec('coffee gulp/compileProd.coffee')
