@@ -2,15 +2,16 @@ React = require 'react'
 
 module.exports = React.createClass
   render: ->
+    {north, south} = @props.data.directions
 
     <section id="directions">
       <h3>Directions</h3>
       <div className="group">
         <p className="six columns">
-          {@props.south}
+          {south}
         </p>
         <p className="six columns">
-          {@props.north}
+          {north}
         </p>
       </div>
     </section>
