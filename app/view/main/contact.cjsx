@@ -5,5 +5,5 @@ module.exports = React.createClass
 
     <section id="contact">
       <h3>Contact</h3>
-      <p>get a wufoo form?</p>
+      <p>Insert wufoo form here</p>
     </section>
