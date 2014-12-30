@@ -4,10 +4,8 @@ async = require 'async'
 fs = require 'fs-extra'
 imgix = require './imgix'
 
-data = require '../app/data/data'
-
 module.exports = (callback) ->
-
+  data = require '../app/data/data'
   getData =
     fb: (cb) ->
       if data.facebook
