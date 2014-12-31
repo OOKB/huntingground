@@ -101,33 +101,6 @@ gulp.task 'static', ->
   gulp.src('./static/**')
     .pipe gulp.dest('./public/')
 
-gulp.task 'facebook', ->
-  r 'http://social.cape.io/facebook/330679596992065'
-    .pipe source('facebook.json')
-    .pipe gulp.dest('./app/data/')
-
-gulp.task 'instagram', ->
-  r 'http://social.cape.io/instagram/29592386'
-    .pipe source('instagram.json')
-    .pipe gulp.dest('./app/data/')
-
-# Watchify the main app file.
-# gulp.task 'compile', ->
-#   opts = watchify.args
-#   opts.extensions = ['.coffee', '.json']
-#   opts.debug = true
-#   w = watchify(browserify('./app/index.coffee', opts))
-#   w.transform coffeeify
-#   w.transform bd
-#   bundle = () ->
-#     w.bundle()
-#       .pipe(source('app.js'))
-#       .pipe(gulp.dest('./dev/'))
-#   w.on('update', bundle)
-#   bundle()
-#   return
-
-
 # - - - - prod - - - -
 
 gulp.task 'deploy', ['static', 'serverData', 'templates', 'styles'], ->
@@ -152,16 +125,8 @@ gulp.task 'set_sha', (cb) ->
 
 # Remove contents from prod directory.
 gulp.task 'prod_clean', ->
-  gulp.src('./prod', read: false)
+  gulp.src('./public', read: false)
     .pipe(clean())
-
-gulp.task 'prod_static', ->
-  gulp.src('./static/**')
-    .pipe gulp.dest('./prod/')
-
-gulp.task 'cssProd', ->
-  runSequence 'set_sha', ['copy_css', 'templatesProd']
-  return
 
 gulp.task 'copy_css', ['styles'], ->
   gulp.src('./dev/app.css')
