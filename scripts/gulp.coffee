@@ -103,7 +103,11 @@ gulp.task 'static', ->
 
 # - - - - prod - - - -
 
-gulp.task 'deploy', ['static', 'serverData', 'templates', 'styles'], ->
+gulp.task 'deploy', (cb) ->
+  runSequence ['static', 'styles', 'serverData'],
+    'templates', 'gh-pages', cb
+
+gulp.task 'gh-pages', ->
   gulp.src './public/**/*'
     .pipe deploy cacheDir: './tmp'
 
