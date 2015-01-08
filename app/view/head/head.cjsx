@@ -15,7 +15,7 @@ module.exports = React.createClass
       </figure>
 
       <hgroup>
-        <h2>"{tagline}"</h2>
+        <h2>{tagline}</h2>
       </hgroup>
 
       <Nav data={@props.data} />
