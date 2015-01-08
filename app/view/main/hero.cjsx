@@ -2,8 +2,11 @@ React = require 'react'
 
 module.exports = React.createClass
   render: ->
-    {coverImg} = @props.data
+    {coverImg, mission} = @props.data
 
-    <section className="hero">
+    <section id="hero">
       <img src={coverImg.url} width={coverImg.width} height={coverImg.height} />
+      <div className="group">
+        <p className="ten columns offset-one">{mission}</p>
+      </div>
     </section>

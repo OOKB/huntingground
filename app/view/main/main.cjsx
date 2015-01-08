@@ -15,7 +15,6 @@ module.exports = React.createClass
 
     <main>
       <Hero data={data} />
-      <About data={data} />
       <Instagram data={data} />
       <Vintage data={data} />
       <Contact data={data} />

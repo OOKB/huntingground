@@ -18,8 +18,4 @@ module.exports = React.createClass
         <li><p><em>M.–Th.</em> 11–7 · <em>Fr. &amp; Sa.</em> 11–8 · <em>Su.</em> 12–6</p></li>
       </ul>
 
-      <div className="credits">
-        <p>Site by <a href="http://www.ookb.co/">OOKB</a> / Powered by <a href="http://www.cape.io/">CAPE</a></p>
-      </div>
-
     </footer>

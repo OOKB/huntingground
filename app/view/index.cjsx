@@ -21,6 +21,11 @@ module.exports = React.createClass
           <h1>{title}</h1>
           <Main data={@props.data} />
           <Foot data={@props.data} />
+
+          <div className="credits">
+            <p>Site by <a href="http://www.ookb.co/">OOKB</a> / Powered by <a href="http://www.cape.io/">CAPE</a></p>
+          </div>
+
         </div>
         <script src="/assets/app.js" />
       </body>

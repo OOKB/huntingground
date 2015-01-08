@@ -16,19 +16,19 @@
 
 /* columnar stuff */
 #wrapper {
-  margin: 48px auto;
-  padding: 0 12px 48px 12px;
+  margin: 3rem auto;
+  padding: 0 1rem 3rem 1rem;
   width: 100%;
 }
 
 .column,
 .columns {
-  margin: 0 0 24px 0;
+  margin: 0 0 2rem 0;
   padding: 0;
 }
 
 .group {
-  margin: 0 0 24px 0;
+  margin: 0 0 2rem 0;
 }
 
 .one,
@@ -44,7 +44,7 @@
 .eleven,
 .twelve, .fullwidth    { width: calc(100% / 12 * 12); }
 
-@media (min-width: 800px) {
+@media (min-width: 50em) {
   .left        {float:left;}
   .right       {float:right;}
   .clear       {display:block;clear:both;}
@@ -52,21 +52,21 @@
   .clearRight  {display:block;clear:right;}
 
   #wrapper {
-    margin: 48px auto;
-    padding-bottom: 48px;
-    max-width: 1200px;
+    margin: 3rem auto;
+    padding-bottom: 3rem;
+    max-width: 75em;
   }
 
   /* columnar stuff */
   .column,
   .columns {
     float: left;
-    margin: 0 0 24px 0;
-    padding: 0 12px;
+    margin: 0 0 2rem 0;
+    padding: 0 1rem;
   }
 
   .group {
-    margin: 0 -12px 24px -12px;
+    margin: 0 -1rem 2rem -1rem;
   }
 
   .one                   { width: calc(100% / 12 * 01); }
@@ -115,13 +115,13 @@ header {
 footer {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
-  margin: 24px 0;
-  padding: 1em 0;
+  margin: 2rem 0;
+  padding: 1rem 0;
   text-align: center;
 }
 
 section {
-  padding-top: 24px;
+  padding-top: 2rem;
 }
 
 .border-top {
@@ -134,6 +134,7 @@ img { width: 100%; max-width: 100%; height: auto; }
 body {
   .grotesque-stack;
   font-weight: 400;
+  font-size: 100%;
   /**/
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -162,8 +163,8 @@ li a.active {
 
 header hgroup h2 {
   .colonial-stack;
-  font-size: 16px;
-  margin: 27px 0;
+  font-size: 1.25rem;
+  margin: 1em 0;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 400px;
@@ -171,16 +172,16 @@ header hgroup h2 {
 
 header nav > ul li {
   font-family: 'GrotesqueMTStdExtraCondRg';
-  font-size: 24px;
+  font-size: 1.75rem;
   font-weight: normal !important;
   text-transform: uppercase;
 }
 
 h3,
 p {
-  font-size: 16px;
-  line-height: 20px;
-  margin-bottom: 6px;
+  font-size: 1rem;
+  line-height: 1.25;
+  margin-bottom: .5em;
 }
 
 h3 {
@@ -205,12 +206,11 @@ header figure img {
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 50em) {
   header figure img {
     width: 50%;
   }
 }
-
 
 /* Main Site Navigation (in header)
 ========================================================================================= */
@@ -235,14 +235,42 @@ header nav h2.title {
   display: none;
 }
 
-/* About Page
+/* Hero / about section
 ========================================================================================= */
-#about p {
-  font-size: 1.5em;
-  line-height: 1.25;
-  margin-bottom: 1em;
-  margin-top: 1em;
+#hero,
+#hero img {
+  position: relative;
+}
+
+#hero { padding: 0; }
+
+#hero .group {
+  position: absolute;
+  width: 100%;
+  margin:0;
+  top:0;
+  left:0;
+  right:0;
+  height: 650px;
+}
+
+#hero .group::before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+
+#hero p {
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
   text-align: center;
+  text-shadow: 0 3px .2em rgba(0, 0, 0, 0.8);
+  line-height: 1;
+  float: none;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 /* Instagram Stuff
@@ -258,13 +286,13 @@ header nav h2.title {
   margin-bottom: 0;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 50em) {
   .polaroid {
     min-height: ~"calc(33vw + 5em)";
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 75em) {
   .polaroid {
     min-height: 450px;
   }
@@ -283,16 +311,6 @@ header nav h2.title {
 ========================================================================================= */
 footer p {
   margin-bottom: 0;
-}
-
-footer .credits {
-  text-align: right;
-  font-size: 75%;
-  opacity: .3333333;
-}
-
-footer .credits:hover {
-  opacity: .75;
 }
 
 footer div.socialmedia ul#sociallinks {
@@ -329,6 +347,21 @@ ul#sociallinks li.fb a {
 
 ul#sociallinks li.insta a {
   background: url(https://fbcdn-dragon-a.akamaihd.net/hphotos-ak-xpa1/t39.2365-6/851565_437867182987589_1852345085_n.jpg) center center no-repeat;
+}
+
+.credits {
+  margin-top: 2em;
+  text-align: right;
+  opacity: .3333333;
+}
+
+.credits:hover {
+  opacity: .75;
+}
+
+.credits p {
+  font-size: .75em;
+  text-transform: uppercase;
 }
 
 /* -----------------------------------------------------*/

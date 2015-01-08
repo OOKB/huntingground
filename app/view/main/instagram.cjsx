@@ -13,6 +13,5 @@ module.exports = React.createClass
       </li>
 
     <section id="instagram">
-//       <h3>From Instagram</h3>
       <ul className="group"> {pics} </ul>
     </section>
