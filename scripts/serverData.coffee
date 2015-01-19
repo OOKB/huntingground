@@ -28,7 +28,9 @@ module.exports = (callback) ->
     {fb, insta} = serverData
 
     data.title = fb.name
-    data.address = "#{fb.location.street}, #{fb.location.city}, #{fb.location.state}. #{fb.location.zip}"
+    {street, city, state, zip} = fb.location
+    if street and city and state and zip
+      data.address = "#{street}, #{city}, #{state}. #{zip}"
     data.phone = fb.phone
     data.coverImg = _.rename fb.cover.images[0], {source: 'url'}
 
