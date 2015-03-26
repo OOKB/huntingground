@@ -5,9 +5,11 @@ module.exports = React.createClass
     {images} = @props
 
     pics = for pic, i in images
-      {id, caption:{text}, images: {standard_resolution:{height, url, width}}} = pic
+      {caption:{text}, images: {standard_resolution:{height, url, width}}} = pic
+      {id, dateCreated} = pic
       <li className="four columns" key={id}>
         <div className="polaroid">
+          <div className="date">{dateCreated.format('MMM Do, LTS')}</div>
           <img src={url} width={width} height={height} />
           <p>{text}</p>
         </div>

@@ -23,8 +23,9 @@
   "license": "ISC",
   "dependencies": {
     "lodash": "3.x",
-    "react": "0.13.x",
+    "moment": "^2.9.0",
     "queries": "0.0.2",
+    "react": "0.13.x",
     "react-router": "0.13.x",
     "superagent": "0.x"
   },
