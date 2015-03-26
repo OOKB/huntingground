@@ -1,20 +1,14 @@
 {
   "name": "huntingground",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Website files for www.shophuntingground.com",
   "main": "app/app.cjsx",
-  "browser": "app/app.cjsx",
-  "browserify": {
-    "extensions": [
-      ".coffee",
-      ".cjsx",
-      ".json"
-    ],
-    "transform": [
-      [
-        "coffee-reactify"
-      ]
-    ]
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ookb/huntingground"
+  },
+  "bugs": {
+    "url": "https://github.com/ookb/huntingground/issues"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -24,37 +18,16 @@
     "build": "NODE_ENV=production browserify ./ > ./public/assets/app.js && zopfli ./public/assets/app.js",
     "clean": "rm -f ./public/assets/*"
   },
-  "author": "Kai Curry <kai@cape.io> (http://www.cape.io/)",
+  "author": "Team CAPE.io",
   "license": "ISC",
   "dependencies": {
-    "node-cjsx": "^0.1.2",
-    "react": "^0.12.1",
-    "reactable": "^0.9.3",
+    "react": "0.13.x",
     "queries": "0.0.2",
-    "coffee-react": "^2.1.2",
-    "lodash": "^2.4.1",
-    "coffee-reactify": "^2.1.0"
+    "lodash": "3.x"
   },
   "devDependencies": {
-    "browserify": "^8.0.2",
-    "gulp": "^3.8.10",
-    "coffee-script": "^1.8.0",
-    "vinyl-transform": "^1.0.0",
-    "gulp-rename": "^1.2.0",
-    "minifyify": "^4.4.0",
-    "gulp-uglify": "^1.0.2",
-    "exorcist": "^0.1.6",
-    "browser-sync": "^1.8.2",
-    "request": "^2.51.0",
-    "gulp-data": "^1.1.1",
-    "gulp-yaml": "^0.2.3",
-    "gulp-less": "^2.0.1",
-    "gulp-markdown-to-json": "^0.2.1",
-    "async": "^0.9.0",
-    "vinyl-source-stream": "^1.0.0",
-    "fs-extra": "^0.13.0",
-    "gulp-debug": "^1.0.1",
-    "gulp-gh-pages": "^0.4.0",
-    "run-sequence": "^1.0.2"
+    "cape-gulp": "git+https://github.com/cape-io/cape-gulp.git",
+    "gulp": "3.x",
+    "coffee-script": "1.x"
   }
 }
