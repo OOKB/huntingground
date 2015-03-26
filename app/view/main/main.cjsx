@@ -10,7 +10,7 @@ Directions = require './directions'
 module.exports = React.createClass
   render: ->
 
-    {facebook: {impressum, cover: {images: [coverImg]}}, instagram, wufoo} = @props
+    {facebook: {impressum, coverImg}, instagram, wufoo} = @props
     {north, south} = @props.directions
     {about, how, trends} = @props.vintage
 
