@@ -4,12 +4,11 @@ Nav = require './nav'
 
 module.exports = React.createClass
   render: ->
-
-    {title, tagline} = @props.data
+    {title, tagline} = @props
 
     <header>
       <figure>
-        <a href="#" title={@props.title} rel="home">
+        <a href="#" title={title} rel="home">
           <img src="logo.png" alt="Home" />
         </a>
       </figure>
@@ -18,5 +17,5 @@ module.exports = React.createClass
         <h2>{tagline}</h2>
       </hgroup>
 
-      <Nav data={@props.data} />
+      <Nav />
     </header>

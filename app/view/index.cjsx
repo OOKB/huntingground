@@ -7,10 +7,10 @@ Foot = require './foot/foot'
 module.exports = React.createClass
   render: ->
     {facebook, db, instagram} = @props
-    {name, location, phone} = facebook
+    {name, location, phone, about} = facebook
     {tagline, wufoo, directions, vintage} = db
 
-    pgTitle = "#{name} | #{tagline}"
+    pgTitle = if tagline then "#{name} | #{tagline}" else name
 
     <html>
       <head>
@@ -20,7 +20,7 @@ module.exports = React.createClass
       </head>
       <body>
         <div id="wrapper">
-          <Head data={@props} />
+          <Head title={name} tagline={tagline or about} />
           <h1>{name}</h1>
           <Main facebook={facebook} instagram={instagram} wufoo={wufoo} directions={directions} vintage={vintage} />
           <Foot location={location} phone={phone} />

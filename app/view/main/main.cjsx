@@ -11,13 +11,22 @@ module.exports = React.createClass
   render: ->
 
     {facebook: {impressum, coverImg}, instagram, wufoo} = @props
-    {north, south} = @props.directions
-    {about, how, trends} = @props.vintage
+
+    if @props.vintage
+      {about, how, trends} = @props.vintage
+      VintageEl = <Vintage about={about} how={how} trends={trends} />
+
+    if @props.directions
+      {north, south} = @props.directions
+      DirectionsEl = <Directions north={north} south={south} />
+
+    if wufoo
+      ContactEl = <Contact wufoo={wufoo} />
 
     <main>
       <Hero coverImg={coverImg} mission={impressum} />
       <Instagram images={instagram} />
-      <Vintage about={about} how={how} trends={trends} />
-      <Contact id={wufoo.id} subdomain={wufoo.subdomain} />
-      <Directions north={north} south={south} />
+      {VintageEl}
+      {ContactEl}
+      {DirectionsEl}
     </main>
