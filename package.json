@@ -22,9 +22,11 @@
   "author": "Team CAPE.io",
   "license": "ISC",
   "dependencies": {
+    "lodash": "3.x",
     "react": "0.13.x",
     "queries": "0.0.2",
-    "lodash": "3.x"
+    "react-router": "0.13.x",
+    "superagent": "0.x"
   },
   "devDependencies": {
     "cape-gulp": "git+https://github.com/cape-io/cape-gulp.git",
