@@ -3,8 +3,10 @@ React = require 'react'
 module.exports = React.createClass
   render: ->
 
-    {address, phone} = @props.data
+    {location, phone} = @props
+    {street, city, state, zip} = location
 
+    address = "#{street} #{city}, #{state}. #{zip}"
     <footer>
       <div className="right socialmedia">
         <ul id="sociallinks">

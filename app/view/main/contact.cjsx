@@ -34,7 +34,7 @@ module.exports = React.createClass
     </div>
 
   render: ->
-    {id, subdomain} = @props.data.wufoo
+    {id, subdomain} = @props
     form = @wufoo id, subdomain
 
     <section id="contact">
