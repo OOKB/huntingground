@@ -7,7 +7,7 @@ Foot = require './foot/foot'
 module.exports = React.createClass
   render: ->
     {facebook, db, instagram} = @props
-    {name} = facebook
+    {name, location, phone} = facebook
     {tagline, wufoo, directions, vintage} = db
 
     pgTitle = "#{name} | #{tagline}"
@@ -23,7 +23,7 @@ module.exports = React.createClass
           <Head data={@props} />
           <h1>{name}</h1>
           <Main facebook={facebook} instagram={instagram} wufoo={wufoo} directions={directions} vintage={vintage} />
-          <Foot data={@props} />
+          <Foot location={location} phone={phone} />
 
           <div className="credits">
             <p>Site by <a href="http://www.ookb.co/">OOKB</a> / Powered by <a href="http://www.cape.io/">CAPE</a></p>
