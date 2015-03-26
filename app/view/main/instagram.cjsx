@@ -7,13 +7,12 @@ module.exports = React.createClass
     height: null
 
   handleResize: ->
-    maxHeight = @state.height
-
+    maxHeight = @state.height or 0
     _.each document.getElementsByClassName('polaroid'), (el) ->
-      if el.offsetHeight > maxHeight then maxheight = el.offsetHeight
-      console.log el.offsetHeight
-
+      if el.offsetHeight > maxHeight
+        maxHeight = el.offsetHeight
     @setState height: maxHeight
+    console.log 'new maxHeight', maxHeight
 
   componentDidMount: ->
     @handleResize()
