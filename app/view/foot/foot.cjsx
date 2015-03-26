@@ -6,7 +6,18 @@ module.exports = React.createClass
     {location, phone} = @props
     {street, city, state, zip} = location
 
-    address = "#{street} #{city}, #{state}. #{zip}"
+    address = ''
+    if street
+      address = street + ' '
+    if city
+      address += city + ', '
+    if state
+      address += state + '. '
+    if zip
+      address += zip
+    if phone
+      address += ' · ' + phone
+
     <footer>
       <div className="right socialmedia">
         <ul id="sociallinks">
@@ -16,7 +27,7 @@ module.exports = React.createClass
       </div>
 
       <ul>
-        <li><p>{address} · {phone}</p></li>
+        <li><p>{address}</p></li>
         <li><p><em>M.–Th.</em> 11–7 · <em>Fr. &amp; Sa.</em> 11–8 · <em>Su.</em> 12–6</p></li>
       </ul>
 
