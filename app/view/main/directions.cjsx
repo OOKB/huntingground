@@ -2,7 +2,7 @@ React = require 'react'
 
 module.exports = React.createClass
   render: ->
-    {north, south} = @props.data.directions
+    {north, south} = @props
 
     <section id="directions">
       <h3>Directions</h3>

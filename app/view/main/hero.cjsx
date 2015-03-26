@@ -2,7 +2,7 @@ React = require 'react'
 
 module.exports = React.createClass
   render: ->
-    {coverImg, mission} = @props.data
+    {coverImg, mission} = @props
 
     <section id="hero">
       <img src={coverImg.url} width={coverImg.width} height={coverImg.height} />
