@@ -2,6 +2,7 @@
   "name": "huntingground",
   "version": "0.0.2",
   "description": "Website files for www.shophuntingground.com",
+  "homepage": "http://test.shophuntingground.com",
   "main": "app/app.cjsx",
   "repository": {
     "type": "git",
