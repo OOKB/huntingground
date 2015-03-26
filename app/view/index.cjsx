@@ -7,7 +7,7 @@ Foot = require './foot/foot'
 module.exports = React.createClass
   render: ->
     {facebook: {name}, db: {tagline}} = @props
-    pgTitle = "#{title} | #{tagline}"
+    pgTitle = "#{name} | #{tagline}"
 
     <html>
       <head>
@@ -18,7 +18,7 @@ module.exports = React.createClass
       <body>
         <div id="wrapper">
           <Head data={@props} />
-          <h1>{title}</h1>
+          <h1>{name}</h1>
           <Main data={@props} />
           <Foot data={@props} />
 
