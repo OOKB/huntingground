@@ -20,17 +20,20 @@ module.exports = React.createClass
   render: ->
     {images} = @props
     {height} = @state
-
-    pics = for pic, i in images
-      {caption:{text}, images: {standard_resolution:{url}}} = pic
-      {id, dateCreated} = pic
-      <li className="four columns" key={id}>
-        <div className="polaroid" style={height: height}>
-          <div className="date">{dateCreated.format('MMM Do, LTS')}</div>
-          <img src={url} />
-          <p>{text}</p>
-        </div>
-      </li>
+    if images and images.length
+      pics = for pic, i in images
+        pic.caption = pic.caption or {text: ''}
+        {caption:{text}, images: {standard_resolution:{url}}} = pic
+        {id, dateCreated} = pic
+        <li className="four columns" key={id}>
+          <div className="polaroid" style={height: height}>
+            <div className="date">{dateCreated.format('MMM Do, LTS')}</div>
+            <img src={url} />
+            <p>{text}</p>
+          </div>
+        </li>
+    else
+      return false
 
     <section id="instagram">
       <ul className="group"> {pics} </ul>
