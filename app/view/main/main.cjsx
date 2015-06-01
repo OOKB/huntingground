@@ -10,7 +10,7 @@ Directions = require './directions'
 module.exports = React.createClass
   render: ->
 
-    {facebook: {impressum, coverImg}, instagram, wufoo} = @props
+    {facebook: {impressum, coverPhotos}, instagram, wufoo} = @props
 
     if @props.vintage
       {about, how, trends} = @props.vintage
@@ -24,7 +24,7 @@ module.exports = React.createClass
       ContactEl = <Contact wufoo={wufoo} />
 
     <main>
-      <Hero coverImg={coverImg} mission={impressum} />
+      <Hero coverPhotos={coverPhotos} mission={impressum} />
       <Instagram images={instagram} />
       {VintageEl}
       {ContactEl}

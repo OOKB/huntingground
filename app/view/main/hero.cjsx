@@ -4,9 +4,8 @@ module.exports = React.createClass
   render: ->
     {coverImg, mission} = @props
 
-    if coverImg
-      {url, width, height} = coverImg
-      BigImgEl = <img src={url} width={width} height={height} />
+    if coverPhotos and urlWide = coverPhotos[0]?.urlWide
+      BigImgEl = <img src={urlWide} width="720" height="480" />
 
     <section id="hero">
       {BigImgEl}
