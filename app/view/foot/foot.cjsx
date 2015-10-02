@@ -4,6 +4,8 @@ module.exports = React.createClass
   render: ->
 
     {location, phone} = @props
+    unless location
+      location = {}
     {street, city, state, zip} = location
 
     address = ''
